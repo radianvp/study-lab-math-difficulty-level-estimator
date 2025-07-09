@@ -80,13 +80,12 @@ Training and test sets are available here:
 ```bash
 .
 ├── src/
-│   ├── embedder.py          # QA to vector
-│   ├── qdrant_client.py     # Search & store vectors
-│   ├── prompt_builder.py    # Format GPT prompt with context
-│   ├── predictor.py         # Call OpenAI & parse result
-├── app/                     # Optional Streamlit or FastAPI UI
-├── data/                    # Dataset files
+│   ├── 01_ingest_qdrant.py   # Ingest to vector DB (Qdrant)
+│   ├── vector_search.py      # Search  vectors & ormat GPT prompt with context
+│   ├── FAQStudy_streamlit.py # Call OpenAI & parse Final Streamlit App
+├── data/                     # Dataset files
 ├── requirements.txt
+├── Docker                    # Dockerfile
 └── README.md
 ```
 
@@ -103,30 +102,31 @@ pip install -r requirements.txt
 2. Load your dataset and index it in Qdrant:
 
 ```python
-python src/embedder.py
+python src/01_ingest_qdrant.py
 python src/qdrant_client.py
 ```
 
-3. Run a prediction on a new QA:
+3. Run a Streamlit App:
 
 ```python
-python src/predictor.py
+streamlit run src/FAQStudy_streamlit.py.py
 ```
+
+4. See te result at:
+
+[Study Lab - Math Difficulty Level Estimator](https://advp-ai-services-study-lab-math-difficulty-level-estimator.tqe5vc.easypanel.host)
 
 ---
 
 ## 🔮 Future Improvements
 
 - Fine-tune an LLM using the labeled training set
-- Use confidence scoring from GPT responses
-- Add a web UI with Streamlit or FastAPI
-- Deploy with Docker + REST API endpoint
 
 ---
 
 ## 👨‍💻 Author
 
-Built by [Your Name] — as part of the **Applied Generative AI Engineer Challenge**.
+Built by [@radianvp] — as part of the **Applied Generative AI Engineer Challenge**.
 
 ---
 
