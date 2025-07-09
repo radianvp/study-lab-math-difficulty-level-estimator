@@ -32,17 +32,17 @@ A: 3x^2
 
 ---
 
-## 📊 Flow Diagram
+## 📈 RAG Pipeline – Dataflow Diagram
 
 ```mermaid
 flowchart TD
-    A[Input: New Math Question + Answer] --> B[Embed QA with SentenceTransformer]
-    B --> C[Search Similar Problems in Qdrant]
-    C --> D[Retrieve Top-k QA Pairs with Labels]
-    D --> E[Build Prompt with Context]
-    E --> F[Query GPT Model (OpenAI)]
-    F --> G[GPT Outputs Difficulty: 1–5]
-    G --> H[Return Prediction to User / API]
+    A(["📥 Input: New Math Question + Answer"] --> B["🔎 Embed QA with SentenceTransformer"])
+    B --> C(["📚 Search Similar Problems in Qdrant"])
+    C --> D(["📦 Retrieve Top-k QA Pairs with Labels"])
+    D --> E(["🧠 Build Prompt with Context"])
+    E --> F(["🤖 Query GPT Model (OpenAI)"])
+    F --> G(["📊 GPT Outputs Difficulty: 1–5"])
+    G --> H(["✅ Return Prediction to User / API"])
 
     style A fill:#E3F2FD,stroke:#1E88E5,stroke-width:2px
     style B fill:#E8F5E9,stroke:#43A047,stroke-width:2px
@@ -52,7 +52,6 @@ flowchart TD
     style F fill:#E1F5FE,stroke:#039BE5,stroke-width:2px
     style G fill:#E8EAF6,stroke:#3F51B5,stroke-width:2px
     style H fill:#E0F7FA,stroke:#00ACC1,stroke-width:2px
-
 ```
 
 ---
