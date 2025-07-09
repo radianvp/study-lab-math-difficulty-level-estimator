@@ -36,7 +36,7 @@ A: 3x^2
 
 ```mermaid
 flowchart TD
-    A(["📨 User Question"]) --> B(["🔎 Embed Query"])
+    A(["📨 Input: New Math Question + Answer"]) --> B(["🔎 Embed QA with SentenceTransformer"])
     B --> C(["📁 Vector Search (Qdrant)"])
     C --> D(["📄 Retrieve Top-K Docs"])
     D --> E(["🧠 Add Context to Prompt"])
