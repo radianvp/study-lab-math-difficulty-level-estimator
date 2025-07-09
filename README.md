@@ -44,17 +44,6 @@ flowchart TD
     F --> G(["📊 GPT Outputs Difficulty: 1–5"])
     G --> H(["✅ Return Prediction to User / API"])
 ```
-
----
-
-
-    A(["📨 User Question"]) --> B(["🔎 Embed Query"])
-    B --> C(["📁 Vector Search (Qdrant)"])
-    C --> D(["📄 Retrieve Top-K Docs"])
-    D --> E(["🧠 Add Context to Prompt"])
-    E --> F(["🤖 LLM (GPT-4)"])
-    F --> G(["✅ Return Answer"])
-```
 ---
 
 ## 📦 Dataset
