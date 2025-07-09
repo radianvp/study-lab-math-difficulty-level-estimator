@@ -36,13 +36,12 @@ A: 3x^2
 
 ```mermaid
 flowchart TD
-    A(["📥 Input: New Math Question + Answer"] --> B["🔎 Embed QA with SentenceTransformer"])
-    B --> C(["📚 Search Similar Problems in Qdrant"])
-    C --> D(["📦 Retrieve Top-k QA Pairs with Labels"])
-    D --> E(["🧠 Build Prompt with Context"])
-    E --> F(["🤖 Query GPT Model (OpenAI)"])
-    F --> G(["📊 GPT Outputs Difficulty: 1–5"])
-    G --> H(["✅ Return Prediction to User / API"])
+    A(["📨 User Question"]) --> B(["🔎 Embed Query"])
+    B --> C(["📁 Vector Search (Qdrant)"])
+    C --> D(["📄 Retrieve Top-K Docs"])
+    D --> E(["🧠 Add Context to Prompt"])
+    E --> F(["🤖 LLM (GPT-4)"])
+    F --> G(["✅ Return Answer"])
 ```
 ---
 
