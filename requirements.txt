@@ -1,0 +1,6 @@
+pandas
+streamlit
+dotenv
+openai
+qdrant-client
+qdrant-client[fastembed]>=1.14.2
